@@ -1,0 +1,88 @@
+My DAY-5 progress for 100 days of code challenge
+
+
+Q9: Write a program to calculate simple and compound interest for given principal, rate, and time.
+
+/*
+Sample Test Cases:
+Input 1:
+1000 5 2
+Output 1:
+Simple Interest=100, Compound Interest=102.5
+
+Input 2:
+5000 7 3
+Output 2:
+Simple Interest=1050, Compound Interest=1125.76
+
+*/
+
+
+
+//Solution : For this math header file is used to include mathematical functions and formula used is P*R*T/100
+
+#include <stdio.h>
+#include <math.h>   // for pow() function
+
+int main() {
+    float principal, rate, time;
+    float si, ci;
+
+    // Input principal, rate, and time
+    printf("Enter Principal, Rate, and Time: ");
+    scanf("%f %f %f", &principal, &rate, &time);
+
+    // Calculate Simple Interest
+    si = (principal * rate * time) / 100;
+
+    // Calculate Compound Interest
+    ci = principal * pow((1 + rate / 100), time) - principal;
+
+    // Display results
+    printf("Simple Interest=%.2f, Compound Interest=%.2f\n", si, ci);
+
+    return 0;
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q10: Write a program to input time in seconds and convert it to hours:minutes:seconds format.
+
+/*
+Sample Test Cases:
+Input 1:
+3661
+Output 1:
+1:1:1
+
+Input 2:
+7322
+Output 2:
+2:2:2
+
+*/
+
+
+//Solution : Divide total seconds by 3600 to get hours and Take the remainder, divide by 60 to get minutes.The final remainder is seconds.
+
+
+#include <stdio.h>
+
+int main() {
+    int totalSeconds, hours, minutes, seconds;
+
+    // User giving Input  time in seconds
+    printf("Enter time in seconds: ");
+    scanf("%d", &totalSeconds);
+
+    // Converting to hours:minutes:seconds
+    hours = totalSeconds / 3600;              // 1 hour = 3600 seconds
+    minutes = (totalSeconds % 3600) / 60;     // remaining minutes
+    seconds = totalSeconds % 60;              // remaining seconds
+
+    // Giving output
+    
+    printf("%d:%d:%d\n", hours, minutes, seconds);
+
+    return 0;
+}
