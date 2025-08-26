@@ -1,0 +1,86 @@
+This is my DAY-4 progress of 100 Days code challenge
+
+
+Q7: Write a program to swap two numbers without using a third variable.
+
+/*
+Sample Test Cases:
+Input 1:
+10 20
+Output 1:
+After swap: 20 10
+
+Input 2:
+7 14
+Output 2:
+After swap: 14 7
+
+*/
+
+
+//Solution:-To code this,store the sum of the two numbers in one variable, then use subtraction twice to recover the original values in swapped positions. 
+
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+
+    // Input two numbers
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    // Swap without third variable (using arithmetic)
+    a = a + b;  //adding  both numbers
+    b = a - b;  //subtract new b from sum → gives original a
+    a = a - b;  //subtract new b from sum → gives original b
+
+    // Display result
+    printf("After swap: %d %d\n", a, b);
+
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q8: Write a program to find and display the sum of the first n natural numbers.
+
+/*
+Sample Test Cases:
+Input 1:
+5
+Output 1:
+Sum=15
+
+Input 2:
+10
+Output 2:
+Sum=55
+
+*/
+
+
+
+//Solution The logic is: add all numbers from 1 up to n (i.e., 1+2+3+…+n) using a loop 
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    // Input n
+    printf("Enter a positive integer n: ");
+    scanf("%d", &n);
+
+    // Calculate sum using loop
+    for (int i = 1; i <= n; i++) {
+        sum += i;  // add each natural number
+    }
+
+    // Display result
+    printf("Sum=%d\n", sum);
+
+    return 0;
+}
