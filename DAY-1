@@ -1,0 +1,88 @@
+Q1: Write a program to input two numbers and display their sum.
+
+/*
+Sample Test Cases:
+Input 1:
+3 4
+Output 1:
+Sum = 7
+
+Input 2:
+-1 20
+Output 2:
+Sum = 19
+
+*/
+
+//Solution : This Code majorly done by using printf and scanf functions, as follows:-
+
+
+#include <stdio.h>
+
+
+int main() {
+    int x, y, sum;
+
+    // Taking the value from the user 
+    printf("Enter first number: ");
+    scanf("%d", &x);
+
+    printf("Enter second number: ");
+    scanf("%d", &y);
+
+    // Processing the sum between the two numbers
+    sum = x + y;
+
+    // Final output
+    printf("The sum of %d and %d is: %d\n", x, y, sum);
+
+    return 0;
+}
+
+
+
+...................................................................................................................................................................................................................
+
+
+
+Q2: Write a program to input two numbers and display their sum, difference, product, and quotient.
+
+/*
+Sample Test Cases:
+Input 1:
+10 2
+Output 1:
+Sum=12, Diff=8, Product=20, Quotient=5
+
+Input 2:
+7 3
+Output 2:
+Sum=10, Diff=4, Product=21, Quotient=2
+
+*/
+
+
+//Solution:- For this int function plays a major role in displaying mathematical operations for thr given input by the user.Below is how the code works
+
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    
+    // Taking input from the user
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    
+    // Performing sum diff prod quotient 
+    int sum = a + b;
+    int diff = a - b;
+    int prod = a * b;
+    int quotient = a / b; // integer division
+    
+    // Display results
+    printf("Sum=%d, Diff=%d, Product=%d, Quotient=%d\n", sum, diff, prod, quotient);
+
+    return 0;
+}
+
