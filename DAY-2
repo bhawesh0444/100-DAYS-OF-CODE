@@ -1,0 +1,83 @@
+//This is my Day 2 of 100 days of code challenge
+
+Q3: Write a program to calculate the area and perimeter of a rectangle given its length and breadth.
+
+/*
+Sample Test Cases:
+Input 1:
+5 10
+Output 1:
+Area=50, Perimeter=30
+
+Input 2:
+3 7
+Output 2:
+Area=21, Perimeter=20
+
+*/
+
+
+
+//Sol:-For this int and print function and some mathematical functions are to be used
+
+
+#include <stdio.h>
+
+int main() {
+    int length, breadth, area, perimeter;
+
+    // Taking the input values for the length and breadth from the user
+    printf("Enter length and breadth of rectangle: ");
+    scanf("%d %d", &length, &breadth);
+
+    // Calculating area and lenght for the rectangle 
+    area = length * breadth;
+    perimeter = 2 * (length + breadth);
+
+    // Giving the output 
+    printf("Area=%d, Perimeter=%d\n", area, perimeter);
+
+    return 0;
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q4: Write a program to calculate the area and circumference of a circle given its radius.
+
+/*
+Sample Test Cases:
+Input 1:
+7
+Output 1:
+Area=153.94, Circumference=43.96
+
+Input 2:
+3
+Output 2:
+Area=28.27, Circumference=18.85
+
+*/
+
+
+//Solution:-Here float function to be used as it is related to circle and the value of pi is pre defined by me
+
+
+#include <stdio.h>
+#define PI 3.14   // Giving the value of pi for calculating 
+
+int main() {
+    float radius, area, circumference;
+
+    //  Taking the value of radius from user 
+    printf("Enter radius of circle: ");
+    scanf("%f", &radius);
+
+    // Calculating area and circumference
+    area = PI * radius * radius;
+    circumference = 2 * PI * radius;
+
+    // Displaying the output 
+    printf("Area=%.2f, Circumference=%.2f\n", area, circumference);
+
+    return 0;
+}
