@@ -1,0 +1,99 @@
+This is my day 16 progress for 100 days of code challenge 
+
+
+Q31: Write a program to take a number as input and print its equivalent binary representation.
+
+/*
+Sample Test Cases:
+Input 1:
+10
+Output 1:
+1010
+
+Input 2:
+7
+Output 2:
+111
+
+*/
+
+
+
+#include <stdio.h>
+
+int main() {
+    int num;
+    int binary[32];  // to store binary digits
+    int i = 0;
+
+    // Taking input
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    // Special case for 0
+    if (num == 0) {
+        printf("0\n");
+        return 0;
+    }
+
+    // Converting to binary
+    while (num > 0) {
+        binary[i] = num % 2;
+        num = num / 2;
+        i++;
+    }
+
+    // Printing binary in reverse order
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%d", binary[j]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q32: Write a program to check if a number is a palindrome.
+
+/*
+Sample Test Cases:
+Input 1:
+121
+Output 1:
+Palindrome
+
+Input 2:
+123
+Output 2:
+Not palindrome
+
+*/
+
+#include <stdio.h>
+
+int main() {
+    int num, original, reversed = 0, digit;
+
+    // Taking input
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    original = num;  // store original number
+
+    // Reverse the number
+    while (num > 0) {
+        digit = num % 10;
+        reversed = reversed * 10 + digit;
+        num = num / 10;
+    }
+
+    // Check palindrome
+    if (original == reversed) {
+        printf("Palindrome\n");
+    } else {
+        printf("Not palindrome\n");
+    }
+
+    return 0;
+}
