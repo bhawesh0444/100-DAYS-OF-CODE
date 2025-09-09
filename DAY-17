@@ -1,0 +1,110 @@
+This is my day 17 progress for 100 days of code challenge 
+
+
+
+Q33: Write a program to check if a number is an Armstrong number.
+
+/*
+Sample Test Cases:
+Input 1:
+153
+Output 1:
+Armstrong
+
+Input 2:
+123
+Output 2:
+Not Armstrong
+
+*/
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num, original, sum = 0, digits = 0, temp, digit;
+
+    // Taking input
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    original = num;
+    temp = num;
+
+    // Counting number of digits
+    while (temp > 0) {
+        digits++;
+        temp = temp / 10;
+    }
+
+    temp = num;
+
+    // Calculating sum of powers of digits
+    while (temp > 0) {
+        digit = temp % 10;
+        sum += pow(digit, digits);
+        temp = temp / 10;
+    }
+
+    // Checking Armstrong condition
+    if (sum == original) {
+        printf("Armstrong\n");
+    } else {
+        printf("Not Armstrong\n");
+    }
+
+    return 0;
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Q34: Write a program to check if a number is prime.
+
+/*
+Sample Test Cases:
+Input 1:
+7
+Output 1:
+Prime
+
+Input 2:
+10
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int num, i, isPrime = 1; // Assuming prime initially
+
+    // Taking input
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num <= 1) {
+        isPrime = 0; // 0 and 1 are not prime
+    } else {
+        // Checking divisibility from 2 to num/2
+        for (i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+    }
+
+    // Output result
+    if (isPrime) {
+        printf("Prime\n");
+    } else {
+        printf("Not prime\n");
+    }
+
+    return 0;
+}
