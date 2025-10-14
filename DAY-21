@@ -1,0 +1,89 @@
+Q41: Write a program to swap the first and last digit of a number.
+
+/*
+Sample Test Cases:
+Input 1:
+1234
+Output 1:
+4231
+
+Input 2:
+1001
+Output 2:
+1001
+
+*/
+
+//Solution:
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num, first, last, digits, middle, result;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    // count total digits
+    digits = (int)log10(num) + 1;
+
+    // find first digit
+    first = num / (int)pow(10, digits - 1);
+
+    // find last digit
+    last = num % 10;
+
+    // remove first and last digit to get the middle part
+    middle = (num % (int)pow(10, digits - 1)) / 10;
+
+    // form the new number by swapping
+    result = last * (int)pow(10, digits - 1) + middle * 10 + first;
+
+    printf("Number after swapping: %d\n", result);
+
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q42: Write a program to check if a number is a perfect number.
+
+/*
+Sample Test Cases:
+Input 1:
+6
+Output 1:
+Perfect number
+
+Input 2:
+10
+Output 2:
+Not perfect number
+
+*/
+
+//Solution:
+
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    // find sum of all divisors (except the number itself)
+    for (int i = 1; i <= num / 2; i++) {
+        if (num % i == 0) {
+            sum += i;  // add divisor
+        }
+    }
+
+    // check if sum of divisors equals the number
+    if (sum == num)
+        printf("Perfect number\n");
+    else
+        printf("Not perfect number\n");
+
+    return 0;
+}
