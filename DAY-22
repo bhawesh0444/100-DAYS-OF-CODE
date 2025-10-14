@@ -1,0 +1,91 @@
+Q43: Write a program to check if a number is a strong number.
+
+/*
+Sample Test Cases:
+Input 1:
+145
+Output 1:
+Strong number
+
+Input 2:
+123
+Output 2:
+Not strong number
+
+*/
+
+//Solution:
+#include <stdio.h>
+
+// function to calculate factorial of a number
+int factorial(int n) {
+    int fact = 1;
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    return fact;
+}
+
+int main() {
+    int num, temp, digit, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    temp = num;  // store original number
+
+    // extract digits one by one
+    while (temp > 0) {
+        digit = temp % 10;             // get last digit
+        sum += factorial(digit);       // add factorial of digit
+        temp /= 10;                    // remove last digit
+    }
+
+    // check if sum of factorial of digits equals original number
+    if (sum == num)
+        printf("Strong number\n");
+    else
+        printf("Not strong number\n");
+
+    return 0;
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q44: Write a program to find the sum of the series: 1 + 3/4 + 5/6 + 7/8 + … up to n terms.
+
+/*
+Sample Test Cases:
+Input 1:
+3
+Output 1:
+Approximate sum: 3.3
+
+Input 2:
+5
+Output 2:
+Approximate sum: 4.4
+
+*/
+
+//Solution:
+#include <stdio.h>
+
+int main() {
+    int n;
+    float sum = 0.0;
+
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+
+    // i = 1 to n (each term has numerator = 2*i-1, denominator = 2*i-2+2 = 2*i)
+    for (int i = 1; i <= n; i++) {
+        float numerator = 2 * i - 1;   // odd numbers: 1, 3, 5, 7...
+        float denominator = i + (i - 1); // denominator: 1, 4, 6, 8...
+        sum += numerator / denominator;
+    }
+
+    printf("Approximate sum: %.1f\n", sum);
+
+    return 0;
+}
