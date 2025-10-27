@@ -1,0 +1,77 @@
+Q45: Write a program to find the sum of the series: 2/3 + 4/7 + 6/11 + 8/15 + ... up to n terms.
+
+/*
+Sample Test Cases:
+Input 1:
+3
+Output 1:
+Approximate sum: 1.56
+
+Input 2:
+5
+Output 2:
+Approximate sum: 2.22
+
+*/
+
+//Solution:
+#include <stdio.h>
+
+int main() {
+    int n;
+    float sum = 0.0;
+
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+
+    // loop for n terms
+    for (int i = 1; i <= n; i++) {
+        float numerator = 2 * i;          // numerator = 2, 4, 6, 8, ...
+        float denominator = 4 * i - 1;    // denominator = 3, 7, 11, 15, ...
+        sum += numerator / denominator;   // add each term to sum
+    }
+
+    printf("Approximate sum: %.2f\n", sum);
+
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q46: Write a program to print the following pattern:
+*****
+*****
+*****
+*****
+*****
+
+/*
+Sample Test Cases:
+Input 1:
+
+Output 1:
+*****
+*****
+*****
+*****
+*****
+
+*/
+
+//Solution;
+#include <stdio.h>
+
+int main() {
+    int n = 5;  // number of rows and columns
+
+    // outer loop for rows
+    for (int i = 1; i <= n; i++) {
+        // inner loop for columns
+        for (int j = 1; j <= n; j++) {
+            printf("*");
+        }
+        printf("\n"); // move to next line after each row
+    }
+
+    return 0;
+}
