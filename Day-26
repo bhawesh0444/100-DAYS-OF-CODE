@@ -1,0 +1,97 @@
+//This is my day 26 progress for 100 days of code challenge
+
+//Q51: Write a program to print the following pattern:
+    5
+   45
+  345
+ 2345
+12345
+
+/*
+Sample Test Cases:
+Input 1:
+
+Output 1:
+    5
+   45
+  345
+ 2345
+12345
+
+*/
+
+//Solution:
+
+#include <stdio.h>
+
+int main() {
+    int i, j, k;
+
+    for (i = 5; i >= 1; i--) {
+        
+        for (j = 1; j < i; j++) {
+            printf(" ");
+        }
+
+        
+        for (k = i; k <= 5; k++) {
+            printf("%d", k);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q52: Write a program to print the following pattern:
+
+*
+
+*
+*
+*
+
+*
+*
+*
+*
+*
+
+*
+*
+*
+
+*
+
+
+
+/*
+Sample Test Cases:
+Input 1:
+
+Output 1:
+Pattern with stars spaced irregularly as shown.
+
+*/
+
+//Solution
+
+#include <stdio.h>
+
+int main() {
+    
+    printf("*\n");
+    printf("\n");
+    printf("*\n*\n*\n");
+    printf("\n");
+    printf("*\n*\n*\n*\n*\n");
+    printf("\n");
+    printf("*\n*\n*\n");
+    printf("\n");
+    printf("*\n");
+
+    return 0;
+}
