@@ -1,0 +1,80 @@
+Q69: Find the second largest element in an array.
+
+/*
+Sample Test Cases:
+Input 1:
+5
+10 20 30 40 50
+Output 1:
+40
+
+*/
+
+//Solution:
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int arr[100], max, secondMax;
+
+    scanf("%d", &n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    max = secondMax = -2147483648;
+
+    for (i = 0; i < n; i++) {
+        if (arr[i] > max) {
+            secondMax = max;
+            max = arr[i];
+        } else if (arr[i] > secondMax && arr[i] != max) {
+            secondMax = arr[i];
+        }
+    }
+
+    printf("%d\n", secondMax);
+
+    return 0;
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q70: Rotate an array to the right by k positions.
+
+/*
+Sample Test Cases:
+Input 1:
+5
+1 2 3 4 5
+2
+Output 1:
+4 5 1 2 3
+
+*/
+
+//Solution
+#include <stdio.h>
+
+int main() {
+    int n, k, i;
+    int arr[100], temp[100];
+
+    scanf("%d", &n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    scanf("%d", &k);
+    k = k % n;
+
+    for (i = 0; i < n; i++) {
+        temp[(i + k) % n] = arr[i];
+    }
+
+    for (i = 0; i < n; i++) {
+        printf("%d ", temp[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
