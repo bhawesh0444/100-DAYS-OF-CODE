@@ -1,0 +1,90 @@
+Q93: Check if two strings are anagrams of each other.
+
+/*
+Sample Test Cases:
+Input 1:
+listen
+silent
+Output 1:
+Anagrams
+
+Input 2:
+hello
+world
+Output 2:
+Not anagrams
+
+*/
+
+//Solution:
+#include <stdio.h>
+
+int main() {
+    char str1[100], str2[100];
+    int freq1[26] = {0}, freq2[26] = {0}, i = 0;
+    gets(str1);
+    gets(str2);
+    while (str1[i] != '\0') {
+        if (str1[i] >= 'a' && str1[i] <= 'z')
+            freq1[str1[i] - 'a']++;
+        else if (str1[i] >= 'A' && str1[i] <= 'Z')
+            freq1[str1[i] - 'A']++;
+        i++;
+    }
+    i = 0;
+    while (str2[i] != '\0') {
+        if (str2[i] >= 'a' && str2[i] <= 'z')
+            freq2[str2[i] - 'a']++;
+        else if (str2[i] >= 'A' && str2[i] <= 'Z')
+            freq2[str2[i] - 'A']++;
+        i++;
+    }
+    for (i = 0; i < 26; i++) {
+        if (freq1[i] != freq2[i]) {
+            printf("Not anagrams\n");
+            return 0;
+        }
+    }
+    printf("Anagrams\n");
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q94: Find the longest word in a sentence.
+
+/*
+Sample Test Cases:
+Input 1:
+I love programming
+Output 1:
+programming
+
+*/
+
+//Solution:
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[200], word[50], longest[50];
+    int i = 0, j = 0, maxLen = 0;
+    gets(str);
+    while (1) {
+        if (str[i] == ' ' || str[i] == '\0') {
+            word[j] = '\0';
+            if (j > maxLen) {
+                maxLen = j;
+                strcpy(longest, word);
+            }
+            j = 0;
+            if (str[i] == '\0')
+                break;
+        } else {
+            word[j++] = str[i];
+        }
+        i++;
+    }
+    printf("%s\n", longest);
+    return 0;
+}
