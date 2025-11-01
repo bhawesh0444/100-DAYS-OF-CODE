@@ -1,0 +1,78 @@
+Q95: Check if one string is a rotation of another.
+
+/*
+Sample Test Cases:
+Input 1:
+abcde
+deabc
+Output 1:
+Rotation
+
+Input 2:
+abc
+acb
+Output 2:
+Not rotation
+
+*/
+
+//Solution:
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[100], str2[100], temp[200];
+    gets(str1);
+    gets(str2);
+    if (strlen(str1) != strlen(str2)) {
+        printf("Not rotation\n");
+        return 0;
+    }
+    strcpy(temp, str1);
+    strcat(temp, str1);
+    if (strstr(temp, str2))
+        printf("Rotation\n");
+    else
+        printf("Not rotation\n");
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q96: Reverse each word in a sentence without changing the word order.
+
+/*
+Sample Test Cases:
+Input 1:
+I love coding
+Output 1:
+I evol gnidoc
+
+*/
+
+//Solution:
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[200], word[50];
+    int i = 0, j = 0;
+    gets(str);
+    while (1) {
+        if (str[i] == ' ' || str[i] == '\0') {
+            for (int k = j - 1; k >= 0; k--)
+                printf("%c", word[k]);
+            if (str[i] == ' ')
+                printf(" ");
+            j = 0;
+            if (str[i] == '\0')
+                break;
+        } else {
+            word[j++] = str[i];
+        }
+        i++;
+    }
+    printf("\n");
+    return 0;
+}
